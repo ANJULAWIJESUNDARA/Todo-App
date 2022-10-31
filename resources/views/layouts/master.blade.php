@@ -14,7 +14,7 @@
         <!-- Page Content-->
         <div class="page-content-tab">
             <div class="container-fluid">
-                @yield('page-title-breadcrumb') >> @yield('page-title-breadcrumb2')
+
                 @yield('content')
             </div><!-- container -->
             <footer class="footer text-center text-sm-left">

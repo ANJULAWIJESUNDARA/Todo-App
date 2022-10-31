@@ -28,7 +28,7 @@
 <script src="{{ asset('plugins/moment/moment.js') }}"></script>
 <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
-<script src="{{ asset('plugins/timepicker/bootstrap-material-datetimepicker.js') }}"></script>
+<script src="{{ asset('asset/plugins/timepicker/bootstrap-material-datetimepicker.js') }}"></script>
 
 <!-- Required datatable js -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -62,6 +62,7 @@
 <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script src="{{ asset('assets/lib/toast/jquery.toast.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $('#datatable').DataTable({
         dom: 'Bfrtip',
@@ -117,7 +118,7 @@
     @if (session('message')['success'] == '1')
         <script>
              $.toast({
-                
+
 
                     heading: 'Success',
                     text: "{{ session('message')['message'] }}",

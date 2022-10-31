@@ -14,7 +14,7 @@
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="" role="button"
                             aria-haspopup="false" aria-expanded="false">
 
-                            <img src="{{ asset('img/profile.png') }}" alt="profile-user" class="rounded-circle"/> &nbsp; @if(!empty($user))
+                            <img src="{{ asset('assets/images/users/user-1.png') }}" alt="profile-user" class="rounded-circle"/> &nbsp; @if(!empty($user))
                             {{$user->name}}
                             @endif
 
@@ -45,7 +45,7 @@
                             <i data-feather="menu" class="align-self-center"></i>
                         </button>
                     </li>
-                    
+
                 </ul>
             </nav>
             <!-- end navbar-->

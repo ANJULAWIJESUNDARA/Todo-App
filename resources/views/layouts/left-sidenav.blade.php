@@ -13,18 +13,13 @@
     <ul class="metismenu left-sidenav-menu scroll">
         <!--slimscroll-->
         <br><br><br>
-            <li class="leftbar-menu-item @if (Request::segment(1) == 'contact-group' ||Request::segment(1) == 'home') active @endif    ">
+            <li class="leftbar-menu-item @if (Request::segment(1) == 'home' ||Request::segment(1) == '/') active @endif    ">
                 <a href="{{ url('contact-group') }}" class="menu-link">
-                    <i class="mdi mdi-phone"></i>
-                    <span> Contact Group</span>
+                    <i class="mdi mdi-guage"></i>
+                    <span> Dashboard</span>
                 </a>
             </li>
-            <li class="leftbar-menu-item @if (Request::segment(1) == 'contacts') active @endif    ">
-                <a href="{{ url('contacts') }}" class="menu-link">
-                    <i class="mdi mdi-phone"></i>
-                    <span> Contacts</span>
-                </a>
-            </li>
+
     </ul>
 </div>
 <!-- end left-sidenav-->

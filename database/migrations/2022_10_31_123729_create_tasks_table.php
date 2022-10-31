@@ -17,12 +17,10 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title' ,256);
-            $table->text('description' );
+            $table->text('description' )->nullable();
             $table->enum('status' ,['pending' ,'ongoing' ,'hold' ,'completed'])->default('pending');
             $table->integer('piority_id')->nullable();
-            $table->dateTime('planned_start_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('planned_end_date')->nullable();
-            $table->dateTime('actual_start_date')->nullable();
             $table->dateTime('actual_end_date')->nullable();
             $table->boolean('is_completed')->default(false);
             $table->integer('user_id')->nullable();
