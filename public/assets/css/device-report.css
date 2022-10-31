@@ -1,0 +1,37 @@
+.search-btn
+{
+    background-color: rgb(218, 124, 124);
+    border: none;
+
+}
+.search-btn:hover
+{
+    background-color: rgb(218, 124, 124);
+    border: none;
+
+}
+.export-excel
+{
+    background-color: rgb(218, 124, 124);
+    border: none;
+    float: right;
+    margin-top:-50px;
+
+}
+.export-excel :hover
+{
+    background-color: rgb(218, 124, 124);
+    border: none;
+
+}
+.imei-hr{
+    height: 300px rebeccapurple;
+    border-width: 30px;;
+}
+.device-report-table td{
+    font-size: 12px;
+}
+.device-report-table th{
+    font-size: 14px;
+}
+
