@@ -1,0 +1,91 @@
+.dashboard-first-card {
+    margin-left:15mm;
+    width: 15rem;
+    font-size: 12px;
+
+}
+.dashboard-first-card-header{
+    text-align: center;
+}
+.dashboard-fifth-card-header{
+    margin-left:160mm;
+    font-size: 12px;;
+}
+.dashboard-second-card{
+    width: 13rem;
+    height:8mm;
+    font-size: 12px;
+    text-align: center;
+
+    margin-left:5mm;
+}
+.dashboard-third-card{
+    width: 12rem;
+    height:8mm;
+    font-size: 12px;
+    /* text-align: center; */
+
+    margin-left:80mm;
+    margin-top:-25mm;
+}
+.dashboard-fourth-card{
+    width: 35rem;
+    height:8mm;
+    font-size: 12px;
+    text-align: center;
+
+    margin-left:5mm;
+}
+.dashboard-fifth-card{
+    width: 11rem;
+    height:8mm;
+    font-size: 12px;
+    /* text-align: center; */
+
+    margin-left:140mm;
+    margin-top:0mm;
+}
+.dashboard-sixth-card{
+    width: 11rem;
+    height:8mm;
+    font-size: 12px;
+    /* text-align: center; */
+
+    margin-left:190mm;
+    margin-top:-7.5mm;
+}
+.dashboard-sixth-card-header{
+    margin-left:19mm;
+    font-size: 12px;;
+
+
+}
+.dashboard-seventh-card{
+    width: 11rem;
+    height:8mm;
+    font-size: 12px;
+    /* text-align: center; */
+
+    margin-left:240mm;
+    margin-top:-7.5mm;
+}
+.dashboard-seventh-card-header{
+    margin-left:29mm;
+    font-size: 12px;;
+
+
+}
+.numberCircle {
+    border-radius: 50%;
+    width: 26px;
+    height: 18px;
+    padding: 1px;
+    float: right;
+
+    background: rgb(238, 79, 79);
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+    font: 12px ;
+}

@@ -1,0 +1,40 @@
+.device-report-search{
+    width: 40%;
+
+}
+
+.device-report-search-radio{
+    padding-left: 10mm;
+    padding-top: 2mm;
+
+}
+.radio-lab{
+    padding-left: 2mm;
+    padding-right: 2mm;
+}
+.section1-runreport
+{
+    padding-left: 31mm;
+}
+.section3-runreport
+{
+    padding-left: 108mm;
+}
+.date-between{
+    padding-left: 2mm;
+    padding-right: 2mm;
+}
+.header-info{
+    padding-left: 2mm;
+    /* padding-right: 2mm; */
+}
+.total-active{
+    padding-left: 20mm;
+}
+.total-suspended{
+    padding-left: 5mm;
+}
+.company{
+    padding-left: 30mm;
+}
+

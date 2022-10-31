@@ -1,0 +1,32 @@
+
+.archive-btn {
+
+/*
+    background-color: rgb(233, 146, 66);
+    border-color: rgb(233, 146, 66); */
+    border-radius: 0px;
+
+    font-size: 16px;
+}
+.archive-btn:disabled{
+    /* background-color: rgb(233, 146, 66);
+    border-color: rgb(233, 146, 66); */
+    border-radius: 0px;
+    /* border: 10px solid rgb(233, 146, 66); */
+    font-size: 16px;
+
+}
+
+.archive-btn:hover {
+
+    background-color: rgb(233, 146, 66);
+    border-color: rgb(233, 146, 66);
+}
+.archive-btn:active {
+
+    background-color: rgb(233, 146, 66);
+    border-color: rgb(233, 146, 66);
+}
+.main-topic-details{
+    text-align: center;
+}
