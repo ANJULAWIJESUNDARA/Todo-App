@@ -24,7 +24,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>TODO APP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- CSS only -->
@@ -48,37 +48,46 @@
                         @csrf
 
                         <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example3">Name </label>
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="form3Example3">Name *</label>
 
-                            <input type="text" id="form3Example3" class="form-control form-control-lg"
+                            <input type="text" id="form3Example3" class="form-control form-control-md"
                                 placeholder="Enter a valid name" name="name" required />
                         </div>
 
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example3">Email </label>
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="form3Example3">Email *</label>
 
-                            <input type="email" id="form3Example3" class="form-control form-control-lg"
+                            <input type="email" id="form3Example3" class="form-control form-control-md"
                                 placeholder="Enter a valid email " name="email" required/>
                             @error('email')
                             <span class="alert alert-danger">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="form3Example3">Mobile Number * </label>
+
+                            <input type="number" id="form3Example3" class="form-control form-control-md"
+                                placeholder="Enter a Mobile Number " name="mobile_number" required/>
+                            @error('mobile_number')
+                            <span class="alert alert-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <label class="form-label" for="form3Example4">Password</label>
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="form3Example4">Password *</label>
 
-                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                            <input type="password" id="form3Example4" class="form-control form-control-md"
                                 name="password" placeholder="Enter password" required />
                             @error('password')
                             <span class="alert alert-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-outline mb-3">
-                            <label class="form-label" for="form3Example4">Confirm Password</label>
+                            <label class="form-label" for="form3Example4">Confirm Password *</label>
 
-                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                            <input type="password" id="form3Example4" class="form-control form-control-md"
                                 name="password_confirmation" placeholder="Enter password" required />
                         </div>
 

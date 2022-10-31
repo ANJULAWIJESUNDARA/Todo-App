@@ -47,9 +47,9 @@ height: 100%;
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" name="email" class="form-control form-control-lg"
+                  <input type="text" id="form3Example3" name="email" class="form-control form-control-lg"
                     placeholder="Enter a valid email address" />
-                  <label class="form-label" for="form3Example3">Email address</label>
+                  <label class="form-label" for="form3Example3">Email address or Password</label>
                 </div>
 
                 <!-- Password input -->
