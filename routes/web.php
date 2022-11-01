@@ -24,4 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('tasks', TaskController::class);
 Route::get('/tasks/delete/{id}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('tasks.delete');
+Route::get('/tasks/show/activity/{id}', [App\Http\Controllers\TaskController::class, 'showActivity'])->name('tasks.show-activity');
+Route::get('/tasks/change/piority/{id}', [App\Http\Controllers\TaskController::class, 'changePiority'])->name('tasks.change-piority');
+Route::post('/tasks/update/piority', [App\Http\Controllers\TaskController::class, 'updatePiority'])->name('tasks.update-piority');
 

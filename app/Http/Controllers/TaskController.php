@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityLog as ModelsActivityLog;
 use App\Models\Task;
 use App\Models\User;
 use App\Utils\ActivityLog;
@@ -177,12 +178,13 @@ class TaskController extends Controller
                 $task->save();
 
             }else{
-                $text = 'Task Edited';
-                $this->activityLog->activityLog($task->id, $text , $auth_user->id);
 
                 $task->piority_id = $request->piority_id;
                 $task->save();
             }
+            $text = 'Task Edited';
+            $this->activityLog->activityLog($task->id, $text , $auth_user->id);
+
 
             DB::commit();
             $message = [
@@ -237,5 +239,73 @@ class TaskController extends Controller
         DB::rollBack();
         return response()->json(['success' => 0 , "msg" => "Something Went Wrong "]);
        }
+    }
+
+    public function showActivity($id)
+    {
+
+        $task = Task::find($id);
+        $task_activities = ModelsActivityLog::where('task_id' ,$id)->get();
+
+        return view('task.activity-show', compact('task' ,'task_activities'));
+    }
+
+    public function changePiority($id)
+    {
+        $task = Task::find($id);
+
+        return view('task.piority' , compact('task'));
+
+    }
+
+    public function updatePiority(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $auth_user = Auth::user();
+            $id = $request->id;
+            $piority_id = $request->piority_id;
+            $task = Task::find($id);
+            if($piority_id == 1)
+            {
+                $top_tasks = Task::where('piority_id' ,1)->where('created_by' ,$auth_user->id)->get();
+                if(!empty($top_tasks)){
+                    foreach ($top_tasks as $key => $value) {
+                        if($task->id != $value->id){
+                        $value->piority_id =2 ;
+                        $value->save();
+                        $piority = $this->activityLog->checkPiority(2);
+                        $text = 'Task Piority Change To '.$piority.'';
+                        $this->activityLog->activityLog($value->id, $text , $auth_user->id);
+                    }
+                    }
+                }
+                $task->piority_id = $request->piority_id;
+                $task->save();
+                $piority = $this->activityLog->checkPiority($piority_id);
+                $text = 'Task Piority Change To '.$piority.'';
+                $this->activityLog->activityLog($task->id, $text , $auth_user->id);
+
+
+            }else{
+
+                $task->piority_id = $request->piority_id;
+                $task->save();
+                $piority = $this->activityLog->checkPiority($piority_id);
+                $text = 'Task Piority Change To '.$piority.'';
+                $this->activityLog->activityLog($task->id, $text , $auth_user->id);
+
+            }
+
+
+
+            DB::commit();
+            return response()->json(['success' => 1, "msg" => "Change Piority Success "]);
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return response()->json(['success' => 0 , "msg" => "Something Went Wrong "]);
+
+        }
     }
 }

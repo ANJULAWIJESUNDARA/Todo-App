@@ -12,9 +12,24 @@ class ActivityLog extends Util
         $activity_log = ModelsActivityLog::create([
             'task_id' => $task_id ,
             'activity' => $text ,
-            'user_id' => $user_id 
+            'user_id' => $user_id
         ]);
 
+    }
+
+    public function checkPiority($id)
+    {
+        if($id == 1)
+        {
+            return "Top";
+        }elseif($id == 2){
+            return "High";
+
+        }elseif($id == 3){
+            return "Medium";
+        }else{
+            return "Low";
+        }
     }
 
 }
