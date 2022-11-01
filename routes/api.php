@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::post('login', [App\Http\Controllers\Api\AuthApiController::class, 'login'])->name('login');
+});
+Route::group(['middleware' => ['has_token']], function () {
+
+    Route::post('task/store',  [App\Http\Controllers\Api\TaskController::class, 'storeTask']);
+    Route::post('task/piority/update',  [App\Http\Controllers\Api\TaskController::class, 'updatePiority']);
+
+
 });

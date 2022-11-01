@@ -70,8 +70,8 @@ class TaskController extends Controller
             if($request->piority_id == 1)
             {
                 $top_tasks = Task::where('piority_id' ,1)->where('created_by' ,$auth_user->id)->get();
-                if(!empty($tasks)){
-                    foreach ($tasks as $key => $value) {
+                if(!empty($top_tasks)){
+                    foreach ($top_tasks as $key => $value) {
                         $value->piority_id =2 ;
                         $value->save();
                     }
@@ -168,8 +168,8 @@ class TaskController extends Controller
             if($request->piority_id == 1)
             {
                 $top_tasks = Task::where('piority_id' ,1)->where('created_by' ,$auth_user->id)->get();
-                if(!empty($tasks)){
-                    foreach ($tasks as $key => $value) {
+                if(!empty($top_tasks)){
+                    foreach ($top_tasks as $key => $value) {
                         $value->piority_id =2 ;
                         $value->save();
                     }
@@ -213,15 +213,17 @@ class TaskController extends Controller
        try {
         DB::beginTransaction();
         $task = Task::find($id);
+
         if(!empty($task)){
             $task->delete();
 
         }
+        DB::commit();
                 $auth = Auth::user();
-                $last_task =  Task::where('created_by' , $auth->id)->where('piority_id' ,1)->get();
+                $last_task =  Task::where('created_by' , $auth->id)->where('piority_id' ,1)->first();
                 if(empty($last_task))
                 {
-                    $last_task =  Task::where('created_by' , $auth->id)->where('piority_id' ,1)->get()->last();
+                    $last_task =  Task::where('created_by' , $auth->id)->get()->last();
                     if(!empty($last_task))
                     {
                     $last_task->piority_id = 1;
@@ -230,7 +232,7 @@ class TaskController extends Controller
                 }
 
 
-        DB::commit();
+
         return response()->json(['success' => 1, "msg" => "Your product has been deleted "]);
 
 
