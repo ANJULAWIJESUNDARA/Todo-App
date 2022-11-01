@@ -14,7 +14,7 @@
         <!--slimscroll-->
         <br><br><br>
             <li class="leftbar-menu-item @if (Request::segment(1) == 'home' ||Request::segment(1) == '/') active @endif    ">
-                <a href="{{ url('contact-group') }}" class="menu-link">
+                <a href="{{ url('/home') }}" class="menu-link">
                     <i class="mdi mdi-guage"></i>
                     <span> Dashboard</span>
                 </a>
